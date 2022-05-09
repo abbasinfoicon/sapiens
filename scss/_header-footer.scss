@@ -1,0 +1,481 @@
+/*========================================================================================================
+================================ Header Scss ===================================================================
+===========================================================================================================*/
+header {
+  @include full-width;
+}
+
+//logo-section
+.logo-section {
+  position: absolute;
+  z-index: 9999;
+  padding: 35px 45px;
+
+  @include mq(min, 1367){
+    padding: 45px;
+  }
+
+  //logo-zindex
+  &.logo-zindex {
+    z-index: 9999;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 180px solid $blue;
+    border-right: 539px solid transparent;
+    z-index: 0;
+
+    @include mq(max, 1366) {
+      border-top: 170px solid $blue;
+      border-right: 367px solid transparent;
+    }
+
+
+    @include mq(max, 768) {
+      border-right: 300px solid transparent;
+    }
+  }
+
+  img {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+//head-left-top
+.head-left-top {
+  position: fixed;
+  padding: 17px 18px;
+  z-index: 999;
+  height: 100vh;
+  background: $bg-body;
+
+  @include mq(max, 425) {
+    position: absolute;
+    padding: 10px 5px;
+    z-index: 999;
+    height: auto;
+    background: $blue;
+  }
+
+  ul {
+    text-align: right;
+
+    li {
+      padding-bottom: 19px;
+
+      a {
+        font-size: 13px;
+        color: darken($white, 38%);
+        padding: 0;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+
+/*========================================================================================================
+================================ Footer Scss ===================================================================
+===========================================================================================================*/
+
+footer {
+  @include full-width;
+  padding: 60px 0;
+  padding-left: 60px;
+  z-index: 10;
+
+  //bg-black
+  &.bg-black {
+    background: $footer;
+  }
+
+  @include mq(max, 425) {
+    padding-left: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+
+//footer-logoSection
+.footer-logoSection {
+  position: relative;
+
+  @include mq(max, 992) {
+    margin-bottom: 30px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -56px;
+    background-image: url(../img/bracket.png);
+    height: 213px;
+    width: 49px;
+    top: -18px;
+
+    @include mq(max, 992) {
+      content: none;
+    }
+  }
+
+  a {
+    display: block;
+
+    img {
+      margin-bottom: 13px;
+    }
+  }
+
+  p {
+    color: darken($white, 55%);
+    font-size: 13px;
+    @include opensans(regular400);
+    line-height: 1.98;
+  }
+}
+
+
+//footer-menu
+.footer-menu {
+  text-align: center;
+
+  ul {
+    margin-bottom: 30px;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+
+//topMenu-footer
+.topMenu-footer {
+  li {
+    padding: 0 11px;
+
+    a {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 14px;
+      @include biorhyme(bold700);
+      letter-spacing: 0.5px;
+
+      @include mq(max, 425) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+
+//middleMenu-footer
+.middleMenu-footer {
+  li {
+    padding: 8px 11px;
+    border-right: 1px solid #6d6d6d;
+
+    @include min-max(1320, 1514) {
+      padding: 5px;
+    }
+
+    @include mq(max, 425) {
+      border-right: none;
+      border-bottom: 1px solid #6d6d6d;
+      display: block !important;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    a {
+      color: darken($white, 52%);
+      font-size: 16px;
+      @include opensans(reguler400);
+      letter-spacing: 0.4px;
+
+      @include mq(max, 1514) {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+//socialMenu-footer
+.socialMenu-footer {
+  li {
+    padding: 0 3px;
+
+    a {
+      display: block;
+      color: $footer;
+
+      i.fa {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background: #6e6e6e;
+        line-height: 20px;
+      }
+
+      &:hover {
+        i.fa-facebook {
+          background: #4b69b0;
+        }
+
+        i.fa-twitter {
+          background: #37b1e1;
+        }
+
+        i.fa-linkedin {
+          background: #0678b6;
+        }
+
+        i.fa-google-plus {
+          background: #e83f3a;
+        }
+      }
+
+    }
+  }
+}
+
+//newsletterMenu-footer
+.newsletterMenu-footer {
+  margin-bottom: 30px;
+
+  a {
+    text-transform: uppercase;
+    color: $white;
+    font-size: 11.3px;
+    font-family: roboto;
+    letter-spacing: 0;
+    text-decoration: underline;
+  }
+
+  .yikes-mailchimp-container {
+    display: none;
+    background-color: transparent;
+    padding: 0;
+
+    .yikes-easy-mc-form {
+      max-width: 366px;
+      width: auto;
+      margin: 0 auto;
+      position: relative;
+
+      input[type=email] {
+        background-color: #979797;
+        border: 0;
+        font-weight: 400;
+        font-size: 16px;
+        color: $black;
+        padding: 0 15px;
+        width: 100%;
+        height: 40px
+      }
+
+      input[type=email]::-webkit-input-placeholder {
+        color: $black;
+      }
+
+      input[type=email]::-moz-placeholder {
+        color: $black;
+      }
+
+      input[type=email]:-ms-input-placeholder {
+        color: $black;
+      }
+
+      input[type=email]:-moz-placeholder {
+        color: $black;
+      }
+
+      .yikes-easy-mc-submit-button {
+        background: $black;
+        border: 0;
+        text-align: center;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 40px;
+
+        span {
+          font-size: 16px;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+
+.contact-us .yikes-mailchimp-container form label span,
+.newsletterMenu-footer .yikes-mailchimp-container .yikes-easy-mc-form label span {
+  display: none
+}
+
+
+//mentionMenu-footer
+.mentionMenu-footer {
+  li {
+    a {
+      color: darken($white, 54%);
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+  }
+}
+
+//scroll
+
+#scroll {
+  position: fixed;
+  right: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: $blue;
+  text-indent: -9999px;
+  display: none;
+  @include border-radius(60);
+  bottom: 60px;
+  z-index: 9999;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -12px;
+    height: 0;
+    width: 0;
+    border: 8px solid transparent;
+    border-bottom-color: $white;
+  }
+
+  &:hover {
+    background-color: $yellow;
+    opacity: 1;
+    filter: "alpha(opacity=100)";
+    -ms-filter: "alpha(opacity=100)";
+  }
+}
+
+
+/*========================================================================================================
+================================ SEARCHBOX Scss ===================================================================
+===========================================================================================================*/
+#search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  @include transition(all 0.5s ease-in-out);
+  @include transform(translate(0px, -100%) scale(0, 0));
+  opacity: 0;
+  padding: 0 60px;
+
+  @include mq(max, 425) {
+    padding: 0 40px;
+  }
+  @include mq(max, 375) {
+    padding: 0 30px;
+  }
+
+  input[type="search"] {
+    position: absolute;
+    top: 50%;
+    width: calc(100% - 120px);
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    border: 0;
+    margin: 0 auto;
+    margin-top: -51px;
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
+    border-bottom: 2px solid $white;
+
+    @include mq(max, 768) {
+      font-size: 40px;
+      border-bottom: 1px solid $white;
+    }
+
+    @include mq(max, 425) {
+      font-size: 28px;
+
+      width: calc(100% - 80px);
+    }
+    @include mq(max, 375) {
+      font-size: 18px;
+
+      width: calc(100% - 60px);
+    }
+  }
+
+  .btn {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    background-color: $blue;
+    border: $black;
+    transform: translate(-50%, -50%);
+
+    @include mq(max, 768) {
+      width: 120px;
+    }
+  }
+
+  .close {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    color: $white;
+    background-color: $red;
+    border-color: $red;
+    opacity: 1;
+    padding: 10px 17px;
+    font-size: 27px;
+    @include border-radius(100);
+  }
+
+
+  &.open {
+    @include transform(translate(0px, 0px) scale(1, 1));
+    opacity: 1;
+    z-index: 99999;
+  }
+}
+
+
+/*========================================================================================================
+================================ END SEARCHBOX ===================================================================
+===========================================================================================================*/

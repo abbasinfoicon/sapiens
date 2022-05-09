@@ -1,0 +1,124 @@
+/*========================================================================================================
+================================ Member-scss ===================================================================
+===========================================================================================================*/
+.bottom-popup-custom {
+  background: $white;
+  @include full-width;
+  padding: 110px 45px 30px;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 99;
+
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+//member-details
+.member-details {
+  h1 {
+    margin-bottom: 80px;
+
+    @include mq(max, 992) {
+      margin-bottom: 40px;
+    }
+
+    @include mq(max, 768) {
+      margin-bottom: 30px;
+    }
+
+    @include mq(max, 425) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .close-big {
+    top: -35px;
+    right: -50px;
+
+    a {
+      img {
+      }
+    }
+  }
+
+
+  .media {
+    .media-left {
+      padding-right: 27px;
+
+      .media-img {
+        position: relative;
+        width: 209px;
+        height: 185px;
+        overflow: hidden;
+        margin-bottom: 18px;
+
+        img {
+          @include img-center(both);
+          width: 100%;
+        }
+      }
+
+      ul {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+
+        li {
+          background: #6f6f6f;
+          margin: 0 5px;
+          width: 26px;
+          height: 26px;
+          border-radius: 100%;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+
+          a {
+            @include opensans(regular400);
+            color: $white;
+            font-size: 15px;
+
+            i.fa {
+            }
+          }
+        }
+      }
+    }
+
+
+    .media-body {
+      h3 {
+        @include opensans(bold700);
+        color: $blue;
+        font-size: 25px;
+        margin-bottom: 20px;
+        letter-spacing: -0.4px;
+      }
+
+      h4 {
+        @include opensans(regular400);
+        color: $blue;
+        font-size: 18px;
+        margin-bottom: 20px;
+        border-bottom: 2px dashed $border;
+        padding-bottom: 30px;
+      }
+
+      p {
+        @include opensans(regular400);
+        color: $blue;
+        font-size: 17px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+
+/*========================================================================================================
+================================ End-Member-scss ===================================================================
+===========================================================================================================*/

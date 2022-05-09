@@ -1,0 +1,510 @@
+/*========================================================================================================
+================================ REFLECHIR SECTION ===================================================================
+===========================================================================================================*/
+//banner-section
+.banner-section {
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+
+  &:before {
+    content: '';
+    @include overlay;
+    z-index: 0;
+    background-color: rgba(28, 44, 76, 0.76);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: -54px;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    width: 25%;
+    @include transform(skew(-18deg, 0deg));
+  }
+}
+
+
+//banner-content
+.banner-content {
+  @include full-width;
+  padding: 166px 0;
+
+  &.custom-Padding {
+    padding: 200px 0;
+
+    @include mq(min, 1440) {
+      padding: 222px 0;
+    }
+  }
+
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    height: 33%;
+    //background: #778190;
+    background: $btn-blue;
+    width: 5px;
+    margin-top: -6px;
+    z-index: 999;
+  }
+
+
+  h3 {
+    font-size: 30.85px;
+    color: $white;
+    @include biorhyme(light100);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+
+    @include mq(max, 768) {
+      font-size: 18px;
+    }
+
+    //topTitalheading
+    &.topTitalheading {
+      font-size: 18px;
+
+      @include mq(max, 768) {
+        font-size: 15px;
+      }
+    }
+
+
+  }
+
+  h4 {
+    font-size: 37px;
+    color: $white;
+    @include biorhyme(bold700);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+
+    @include mq(max, 992) {
+      font-size: 32px;
+    }
+
+    @include mq(max, 425) {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    color: $white;
+    @include opensans(regular400);
+
+    @include mq(max, 768) {
+      font-size: 18px;
+    }
+    @include mq(max, 425) {
+      font-size: 15px;
+    }
+  }
+
+  &__big {
+    position: relative;
+
+    h3 {
+      @include biorhyme(bold700);
+      font-size: 40px;
+      color: $white;
+      position: relative;
+      z-index: 999;
+      left: 18px;
+      letter-spacing: -1.5px;
+      text-transform: lowercase;
+
+      /*//big-letter
+      .big-letter {
+        font-size: 326.96px;
+        color: $bg-gray;
+        position: relative;
+        left: 18px;
+        z-index: 999;
+      }*/
+
+      &::first-letter{
+        font-size: 326.96px;
+        color: $bg-gray;
+        vertical-align: middle;
+        line-height: 1.2;
+        letter-spacing: -30px;
+      }
+    }
+  }
+}
+
+
+.page-id-455, .page-id-395 {
+  .banner-content__big h3::first-letter{
+    letter-spacing: -15px;
+  }
+}
+
+
+
+//bgWhite-dot
+.bgWhite-dot {
+  background-image: url(../img/bg-dotWhite.png);
+  background-position: right bottom;
+  background-size: contain;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+//reflechir
+.reflechir {
+  position: relative;
+  width: 100%;
+  top: -250px;
+  margin-bottom: -250px;
+
+  @include mq(max, 768) {
+    top: 0;
+    margin-bottom: 0;
+  }
+
+  //feedback-content
+  .feedback-content {
+    margin-top: 300px;
+
+    @include mq(max, 768) {
+      margin-top: 0;
+    }
+
+
+  }
+
+  //owl-nav
+  .owl-nav {
+    @include img-center(both);
+    top: 41.5%;
+    width: 80px;
+    display: inline-flex;
+
+    @include mq(max, 992) {
+      top: 25%;
+    }
+
+    @include mq(max, 768) {
+      top: -5%;
+      right: 0;
+      left: auto;
+    }
+
+    //owl-prev
+    .owl-prev {
+    }
+
+    //owl-next
+    .owl-next {
+      position: relative;
+      right: -40px;
+    }
+  }
+
+  //custom-container
+  .custom-container {
+    @include mq(min, 1366) {
+      width: 1353px;
+
+      //feedback-slider-item
+      .feedback-slider-item {
+        padding: 0 50px;
+      }
+
+    }
+  }
+}
+
+//feedback-slider-item
+.feedback-slider-item {
+  .feedback-content {
+    @include mq(max, 1365) {
+      padding-left: 50px;
+    }
+  }
+
+}
+
+//slider-item
+.slider-item {
+  width: 100%;
+  height: 536px;
+  background: $white;
+  overflow: hidden;
+  position: relative;
+
+  @include mq(max, 768) {
+    height: auto;
+  }
+
+  img {
+    width: auto;
+    height: 100%;
+    @include img-center(both);
+    padding: 18px;
+
+    @include mq(max, 768) {
+      position: static;
+      height: auto;
+      transform: none;
+      padding: 0;
+    }
+  }
+}
+
+
+//nos-observatoires
+.nos-observatoires {
+  h2 {
+    font-size: 34.82px;
+    @include opensans(light100);
+    color: $blue;
+    margin-bottom: 23px;
+
+
+    @include mq(max, 768) {
+      font-size: 32px;
+    }
+
+    @include mq(max, 425) {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    @include opensans(regular400);
+    color: $text-color;
+    line-height: 1.4;
+    margin-bottom: 35px;
+
+
+    @include mq(max, 425) {
+      font-size: 15px;
+    }
+  }
+}
+
+
+//bg-line
+.bg-line {
+  margin-bottom: 15px;
+
+  img {
+  }
+}
+
+
+//add-boxCustom
+.add-boxCustom {
+  position: relative;
+  height: 193px;
+  width: 100%;
+  margin-bottom: 15px;
+  cursor: pointer;
+  @include transition(.5s);
+
+  @include mq(min, 1440) {
+    width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .add-plus {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+
+    img {
+    }
+  }
+
+  h3 {
+    font-size: 15.15px;
+    color: $white;
+    @include biorhyme(bold700);
+    @include img-center(both);
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+
+
+    @include mq(max, 425) {
+      font-size: 15px;
+    }
+  }
+
+  &.bg-color1 {
+    background: #a6adc5;
+
+    &:hover {
+      background: darken(#a6adc5, 10%);
+    }
+  }
+
+  &.bg-color2 {
+    background: #8cc0b4;
+
+    &:hover {
+      background: darken(#8cc0b4, 10%);
+    }
+  }
+
+  &.bg-color3 {
+    background: #f8b098;
+
+    &:hover {
+      background: darken(#f8b098, 10%);
+    }
+  }
+
+  &.bg-color4 {
+    background: #f0e0be;
+
+    &:hover {
+      background: darken(#f0e0be, 10%);
+    }
+  }
+
+  &.bg-color5 {
+    background: #7abfce;
+
+    &:hover {
+      background: darken(#7abfce, 10%);
+    }
+  }
+
+  &.bg-color6 {
+    background: #b5b5b5;
+
+    &:hover {
+      background: darken(#b5b5b5, 10%);
+    }
+  }
+}
+
+
+//msg-img
+.msg-img {
+  position: relative;
+  margin-bottom: 25px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    background: #b3c0d0;
+    z-index: 0;
+
+  }
+
+  img {
+    margin: 0 auto;
+    position: relative;
+    z-index: 9;
+    background: $white;
+  }
+}
+
+
+//saviez-vous
+.saviez-vous {
+  padding-bottom: 70px;
+
+  @include mq(max, 992) {
+    padding-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 28.5px;
+    color: $blue;
+    @include opensans(bold700);
+    margin-bottom: 20px;
+    padding-left: 30px;
+
+
+    @include mq(max, 768) {
+      font-size: 24px;
+    }
+
+    @include mq(max, 425) {
+      font-size: 18px;
+    }
+  }
+
+
+  .media, .media-left, .media-body {
+    vertical-align: middle;
+  }
+
+  .media {
+    .media-left {
+      @include mq(max, 425) {
+        display: block;
+        text-align: center;
+        padding-right: 0;
+      }
+
+      h3 {
+        font-size: 80.73px;
+        color: $blue;
+        @include biorhyme(bold700);
+        display: inline-flex;
+
+        @include mq(max, 425) {
+          font-size: 80px;
+        }
+
+        span {
+          font-size: 25px;
+        }
+      }
+    }
+
+    .media-body {
+      padding-left: 15px;
+      border-left: 3px solid #b3c0d0;
+
+      p {
+        font-size: 16px;
+        @include opensans(regular400);
+
+        @include mq(max, 425) {
+          font-size: 15px;
+        }
+      }
+    }
+
+  }
+
+}
+
+//feedback-slider
+.feedback-slider {
+  position: relative;
+  width: 100%;
+
+}
+
+//invated-coma
+.invated-coma {
+  @include biorhyme(bold700);
+  font-size: 62.98px;
+  color: $blue;
+  position: absolute;
+  top: 30px;
+  left: -40px;
+  letter-spacing: -3px;
+}

@@ -1,0 +1,153 @@
+/*========================================================================================================
+================================ ACTUALITES PAGE ===================================================================
+===========================================================================================================*/
+//postal-section
+.postal-section {
+  @include full-width;
+  padding: 60px;
+  padding-right: 0;
+  padding-top: 42px;
+
+  @include mq(max, 992) {
+    padding: 30px 15px 15px;
+    margin-bottom: 30px;
+  }
+
+  //media
+  .media {
+    border-bottom: 1px dashed $light-gray;
+    padding-bottom: 28px;
+    margin-top: 0;
+    padding-top: 18px;
+
+
+    &.bg-media {
+      background-color: #fbfbfb;
+    }
+
+    //media-left
+    .media-left {
+      padding-right: 20px;
+
+      @include mq(max, 375) {
+        display: block;
+        padding-right: 0;
+
+      }
+
+      img {
+        width: 75px;
+        height: auto;
+
+        @include mq(max, 375) {
+          width: 100%;
+        }
+      }
+    }
+
+    //media-body
+    .media-body {
+      h3 {
+        font-size: 16px;
+        @include biorhyme(black800);
+        color: $blue;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+
+        a {
+          color: $blue;
+          display: inline-block;
+
+          img {
+            margin-bottom: 0;
+          }
+
+          &:hover {
+            color: lighten($blue, 10%);
+          }
+        }
+
+        .date {
+          @include opensans(reguler400);
+          font-size: 14px;
+          color: $blue;
+
+        }
+      }
+
+      a {
+        @include opensans(bold700);
+        font-size: 17px;
+        color: $blue;
+        margin-bottom: 1px;
+
+        &:hover {
+          color: lighten($blue, 10%);
+        }
+      }
+
+      p {
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+
+
+//tright-section
+.tright-section {
+  @include full-width;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include mq(max, 991) {
+    padding: 30px 15px;
+  }
+}
+
+//twitter-section
+.twitter-section {
+  margin-bottom: 18px;
+  min-height: 540px;
+
+  @include mq(max, 991) {
+    margin-bottom: 30px;
+  }
+}
+
+//post-images
+.post-images {
+  padding: 18px;
+
+  @include mq(max, 991) {
+    padding: 0;
+  }
+
+  a {
+    display: block;
+
+    img {
+      margin-bottom: 18px;
+
+      @include mq(max, 991) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+//hide-desktopView
+.hide-desktopView {
+  @include mq(min, 992) {
+    display: none;
+  }
+}
+
+//hide-mobileView
+.hide-mobileView {
+  @include mq(max, 992) {
+    display: none;
+  }
+}
+

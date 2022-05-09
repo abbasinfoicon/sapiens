@@ -1,0 +1,15 @@
+#accordion{
+  .panel, .panel-heading, panel-title, .panel-body{border:0;}
+  .panel{
+    box-shadow:none;
+    .panel-heading{
+      border-radius:0;
+      .panel-title a{text-decoration:none;padding:1em 0;}
+      .panel-title a span{float:right;width:50px;}
+      .panel-title a span:after {content: "\2014";color:#1B5062;font-size: 20px;}
+      .panel-title a.collapsed span:after {content: "+";}
+    }
+  }
+}
+// extra
+body{font-family:"Open Sans", Helvetica, Arial, sans-serif;}

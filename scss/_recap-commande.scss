@@ -1,0 +1,68 @@
+/*========================================================================================================
+================================ Recap-Commande-scss ===================================================================
+===========================================================================================================*/
+//order-receive
+.order-receive {
+  h3 {
+    @include biorhyme(bold700);
+    font-size: 27px;
+    color: $blue;
+    letter-spacing: -1px;
+    margin-bottom: 50px;
+
+    @include mq(max, 992) {
+      margin-bottom: 30px;
+    }
+
+
+    @include mq(max, 768) {
+      font-size: 18px;
+    }
+  }
+
+  p {
+    span {
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $border;
+
+    @include mq(max, 991){
+      border-bottom: none;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+    }
+
+    li {
+      display: inline-block;
+      padding: 0 30px;
+      border-left: 1px solid $border;
+      margin-bottom: 15px;
+
+      &:first-child {
+        padding-left: 0;
+        border-left: none;
+      }
+
+      @include mq(max, 991){
+        border-left: none;
+        display: block;
+        padding: 0;
+        border-bottom: 1px solid $border;
+        padding-bottom: 15px;
+      }
+
+      p {
+        margin-bottom: 0;
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
